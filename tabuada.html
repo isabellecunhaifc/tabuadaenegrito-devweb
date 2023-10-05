@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function tabuada(){
+            const inputNumero = document.getElementById('campo-numero');
+            const tabuadaDiv = document.getElementById('valor-form');
+            tabuadaDiv.innerHTML = '';
+
+            if (inputNumero.value !== '') {
+                const numero = parseInt(inputNumero.value);
+                for (let i = 1; i <= 10; i++) {
+                    const resultado = numero * i;
+                    const linha = `${numero} x ${i} = ${resultado}<br>`;
+                    tabuadaDiv.innerHTML += linha;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <form>
+       <input type="number" id="campo-numero" oninput="tabuada();"> 
+    </form>
+    <div id="valor-form"></div>
+</body>
+</html>
